@@ -1,6 +1,6 @@
 ﻿# Clean Code PHP
 
-## Table of Contents
+## မာတိကာ
 
   1. [Introduction](#introduction)
   2. [Variables](#variables)
@@ -47,32 +47,34 @@
   8. [Don’t repeat yourself (DRY)](#dont-repeat-yourself-dry)
   9. [Translations](#translations)
 
-## Introduction
+## နိဒါန်း
 
-Software engineering principles, from Robert C. Martin's book
-[*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for PHP. This is not a style guide. It's a guide to producing
-readable, reusable, and refactorable software in PHP.
+Robert C. Martin ရဲ့ လက်ရာမြှောက် [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) စာအုပ်ထဲက Software engineering principles တွေကို PHP Language အတွက် သီးသန့် (ဆီလျှော်အောင်) ပြန်လည်မွမ်းမံ စုစည်းပေးထားတာ ဖြစ်ပါတယ်။ ဒါက Coding Style Guideline တစ်ခု မဟုတ်ပါဘူး။ PHP program တွေရေးတဲ့အခါ
 
-Not every principle herein has to be strictly followed, and even fewer will be universally 
-agreed upon. These are guidelines and nothing more, but they are ones codified over many 
-years of collective experience by the authors of *Clean Code*.
+- Code တွေ ရှင်းရှင်းလင်းလင်းဖြစ်အောင် (ဝါ) readable ဖြစ်အောင် ၊ 
+- Code အစိတ်အပိုင်းများကို တခါရေးပြီးနောက် အခြားနေရာများတွင်လည်း ပြန်လည်အသုံးချနိုင်အောင် (ဝါ) reusable ဖြစ်အောင်၊
+- ရှုပ်ထွေးနေတဲ့ Code တွေကို လိုအပ်ရင် အလွယ်တကူ သပ်သပ်ရပ်ရပ် Structure ကျကျ ပြန်လည်ပြင်ဆင်နိုင်တဲ့ (ဝါ) refactorable ဖြစ်အောင်
+
+ရေးသားနိုင်ဖို့ အကူအညီပေးမယ့် လမ်းညွှန်ချက်တစ်ခုဆိုရင် ပိုမှန်ပါလိမ့်မယ်။
+
+ဒီမှာဖော်ပြထားတဲ့ Software ရေးသားနည်း ဥပဒေသတွေကို တသွေမတိမ်း လိုက်နာဖို့တော့ မလိုအပ်ပါဘူး။ တကယ်ဆိုရင် တချို့သော ဥပဒေသတွေကိုသာ နေရာတိုင်းမှာ မှန်တယ်လို့ လက်ခံထားကြတာပါ။ အများစုက သူ့နေရာနဲ့သူ မှန်ကန်အောင် အသုံးချတတ်မှသာ အသုံးဝင်မှာပါ။
+ဒီ ဥပဒေသတွေက လမ်းညွှန်တစ်ခုထက် မပိုပါဘူး။ ဒါပေမယ့် ဒီလမ်းညွှန်ချက်တွေက နှစ်ပေါင်းများစွာ code တွေရေးရင်း ရလာတဲ့ အတွေအကြုံတွေကို Clean Code ရဲ့ မူရင်းရေးသားသူက ကြိုးစားပြီး စုစည်းပေးထားတာပါ။
 
 Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript).
 
-Although many developers still use PHP 5, most of the examples in this article only work with PHP 7.1+.
+အခုလက်ရှိ PHP developers တော်တော်များများက PHP 5 ကို သုံးနေဆဲဖြစ်ပေမယ့်၊ Code example တော်တော်များများကိုတော့ PHP 7.1+ သာ စမ်းကြည့်လို့ ရမှာဖြစ်ပါတယ်။
 
 ## Variables
 
-### Use meaningful and pronounceable variable names
+### Variable တွေနာမည်ပေးတဲ့အခါ ထင်ရှားတဲ့ အဓိပ္ပာယ်ရှိပြီး အသံထွက်ဖတ်လို့ရတဲ့ စကားလုံးမျိုးတွေကိုသာ ရွေးချယ်သင့်ပါတယ်။
 
-**Bad:**
+**မဖြစ်သင့်:**
 
 ```php
 $ymdstr = $moment->format('y-m-d');
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 $currentDate = $moment->format('y-m-d');
@@ -80,9 +82,9 @@ $currentDate = $moment->format('y-m-d');
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use the same vocabulary for the same type of variable
+### အမျိုးအစားတူတဲ့ variable တွေအတွက် တူညီတဲ့ ဝေါဟာရတခုတည်းကိုသာ တသတ်မတ်တည်း အသုံးပြုသင့်ပါတယ်။
 
-**Bad:**
+**မဖြစ်သင့်:**
 
 ```php
 getUserInfo();
@@ -91,7 +93,7 @@ getUserRecord();
 getUserProfile();
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 getUser();
