@@ -80,9 +80,9 @@ $ymdstr = $moment->format('y-m-d');
 $currentDate = $moment->format('y-m-d');
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
-### အမျိုးအစားတူတဲ့ variable တွေအတွက် တူညီတဲ့ ဝေါဟာရတခုတည်းကိုသာ တသတ်မတ်တည်း အသုံးပြုသင့်ပါတယ်။
+### အမျိုးအစားတူတဲ့ variable တွေအတွက် နာမည်ပေးတဲ့အခါ တူညီတဲ့ ဝေါဟာရတခုတည်းကိုသာ တသတ်မတ်တည်း အသုံးပြုသင့်ပါတယ်။
 
 **မဖြစ်သင့်:**
 
@@ -99,7 +99,7 @@ getUserProfile();
 getUser();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### အလွယ်တကူ ပြန်ရှာလို့ရနိုင်မယ့် နာမည်မျိုးကိုဘဲ ပေးသင့်ပါတယ် (အပိုင်း ၁)
 
@@ -149,7 +149,7 @@ if ($user->access & User::ACCESS_UPDATE) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Use explanatory variables
 
@@ -188,7 +188,7 @@ preg_match($cityZipCodeRegex, $address, $matches);
 saveCityZipCode($matches['city'], $matches['zipCode']);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid nesting too deeply and return early (part 1)
 
@@ -238,7 +238,7 @@ function isShopOpen(string $day): bool
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid nesting too deeply and return early (part 2)
 
@@ -280,7 +280,7 @@ function fibonacci(int $n): int
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid Mental Mapping
 
@@ -319,7 +319,7 @@ foreach ($locations as $location) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Don't add unneeded context
 
@@ -352,7 +352,7 @@ class Car
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Use default arguments instead of short circuiting or conditionals
 
@@ -390,7 +390,7 @@ function createMicrobrewery(string $breweryName = 'Hipster Brew Co.'): void
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ## Comparison
 
@@ -427,7 +427,7 @@ if ($a !== $b) {
 
 The comparison `$a !== $b` returns `TRUE`.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 
 ## Functions
@@ -475,7 +475,7 @@ function createMenu(MenuConfig $config): void
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Functions should do one thing
 
@@ -520,7 +520,7 @@ function isClientActive(int $client): bool
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Function names should say what they do
 
@@ -560,7 +560,7 @@ $message = new Email(...);
 $message->send();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Functions should only be one level of abstraction
 
@@ -698,7 +698,7 @@ class BetterJSAlternative
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Don't use flags as function parameters
 
@@ -733,7 +733,7 @@ function createTempFile(string $name): void
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid Side Effects
 
@@ -785,7 +785,7 @@ var_dump($name); // 'Ryan McDermott';
 var_dump($newName); // ['Ryan', 'McDermott'];
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Don't write to global functions
 
@@ -835,7 +835,7 @@ $configuration = new Configuration([
 
 And now you must use instance of `Configuration` in your application.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Don't use a Singleton pattern
 
@@ -896,7 +896,7 @@ $connection = new DBConnection($dsn);
 
 And now you must use instance of `DBConnection` in your application.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Encapsulate conditionals
 
@@ -916,7 +916,7 @@ if ($article->isPublished()) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid negative conditionals
 
@@ -947,7 +947,7 @@ if (isDOMNodePresent($node)) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid conditionals
 
@@ -1022,7 +1022,7 @@ class Cessna implements Airplane
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid type-checking (part 1)
 
@@ -1053,7 +1053,7 @@ function travelToTexas(Traveler $vehicle): void
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid type-checking (part 2)
 
@@ -1089,7 +1089,7 @@ function combine(int $val1, int $val2): int
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Remove dead code
 
@@ -1126,7 +1126,7 @@ $request = requestModule($requestUrl);
 inventoryTracker('apples', $request, 'www.inventory-awesome.io');
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 
 ## Objects and Data Structures
@@ -1202,7 +1202,7 @@ $bankAccount->withdraw($shoesPrice);
 $balance = $bankAccount->getBalance();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Make objects have private/protected members
 
@@ -1253,7 +1253,7 @@ $employee = new Employee('John Doe');
 echo 'Employee name: '.$employee->getName(); // Employee name: John Doe
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ## Classes
 
@@ -1351,7 +1351,7 @@ class Employee
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Avoid fluent interfaces
 
@@ -1455,7 +1455,7 @@ $car->setModel('F-150');
 $car->dump();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Prefer final classes
 
@@ -1523,7 +1523,7 @@ final class Car implements Vehicle
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ## SOLID
 
@@ -1610,7 +1610,7 @@ class UserSettings
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Open/Closed Principle (OCP)
 
@@ -1724,7 +1724,7 @@ class HttpRequester
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Liskov Substitution Principle (LSP)
 
@@ -1852,7 +1852,7 @@ foreach ($shapes as $shape) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Interface Segregation Principle (ISP)
 
@@ -1943,7 +1943,7 @@ class Robot implements Workable
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ### Dependency Inversion Principle (DIP)
 
@@ -2035,7 +2035,7 @@ class Manager
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ## Don’t repeat yourself (DRY)
 
@@ -2135,7 +2135,7 @@ function showList(array $employees): void
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
 
 ## Translations
 
@@ -2159,4 +2159,4 @@ This is also available in other languages:
 * :kr: **Korean:**
    * [yujineeee/clean-code-php](https://github.com/yujineeee/clean-code-php)
    
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#မာတိကာ)**
