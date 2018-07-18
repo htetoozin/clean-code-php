@@ -82,7 +82,7 @@ $currentDate = $moment->format('y-m-d');
 
 **[⬆ back to top](#မာတိကာ)**
 
-### အမျိုးအစားတူတဲ့ variable တွေအတွက် နာမည်ပေးတဲ့အခါ တူညီတဲ့ ဝေါဟာရတခုတည်းကိုသာ တသတ်မတ်တည်း အသုံးပြုသင့်ပါတယ်။
+#### အမျိုးအစားတူတဲ့ variable တွေအတွက် နာမည်ပေးတဲ့အခါ တူညီတဲ့ ဝေါဟာရတခုတည်းကိုသာ တသတ်မတ်တည်း အသုံးပြုသင့်ပါတယ်။
 
 **မဖြစ်သင့်:**
 
@@ -122,18 +122,18 @@ $result = $serializer->serialize($data, 448);
 $json = $serializer->serialize($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 ```
 
-### Use searchable names (part 2)
+### အလွယ်တကူ ပြန်ရှာလို့ရနိုင်မယ့် နာမည်မျိုးကိုဘဲ ပေးသင့်ပါတယ် (အပိုင်း ၂)
 
-**Bad:**
+**မဖြစ်သင့်::**
 
 ```php
-// What the heck is 4 for?
+// 4 ဆိုတာ ဘာကြီးလဲ၊ ဘာကိုရည်ရွယ်ခြင်တာလဲ
 if ($user->access & 4) {
     // ...
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 class User
