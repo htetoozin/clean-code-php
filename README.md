@@ -101,21 +101,22 @@ getUser();
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use searchable names (part 1)
+### အလွယ်တကူ ပြန်ရှာလို့ရနိုင်မယ့် နာမည်မျိုးကိုဘဲ ပေးသင့်ပါတယ် (အပိုင်း ၁)
 
-We will read more code than we will ever write. It's important that the code we do write is 
-readable and searchable. By *not* naming variables that end up being meaningful for 
-understanding our program, we hurt our readers.
-Make your names searchable.
+ကျွန်တော်တို့ Programmer တွေဟာ Code ရေးလို့ အချိန်ကုန်တာထက်စာရင် ရေးပြီးသား Code ကို နားလည်အောင်ပြန်ဖတ်ရတာအတွက် အချိန်ပိုကုန်လေ့ ရှိပါတယ်။ ဒါကြောင့် ကျွန်တော်တို့ ရေးတဲ့ Code တွေဟာ ပြန်ဖတ်တဲ့အခါ ဖတ်ရလွယ်ကူဖို့နဲ့ လွယ်လင့်တကူပြန်ရှာလို့ရနိုင်ဖို့ အရေးကြီးလှပါတယ်။
 
-**Bad:**
+ပြန်ရှာတယ်ဆိုတာ - ဥပမာ: Code Line ပေါင်း ၁၀၀၀၀ လောက် ရှိတဲ့ Project ကြီးမှာ User Log In စဝင်တဲ့ အချိန်ကို ဘယ် Variable နဲ့ မှတ်ထားမိလဲဆိုတာ ပြန်ရှာသလိုမျိုးပေါ့။ userLogInTime လို့ variable ကို နာမည်မပေးဘဲ uLInTime လို့ အတိုကောက် ပေးလိုက်ရင် နောက် Maintain လုပ်မယ့် Developer အနေနဲ့ နားလည်ဖို့ အခက်အခဲဖြစ်သွားနိုင်တာကို ဆိုလိုတာပါ။
+
+ဒါကြောင့် variable နာမည်ပေးတဲ့အခါ ပြီးပြီးရောမပေးသင့်ပါဘူး။ ကိုယ်ရေးနေတဲ့ program ကို ပြန်ဖတ်တဲ့အခါ နားလည်လွယ်စေဖို့ ရည်ရွယ်ပြီး သေချာရွေးချယ်ပြီးမှ ပေးသင့်ပါတယ်။ အဲလိုမှ မဟုတ်ရင် ကိုယ့် program ကို ဖတ်မယ့်သူတွေကို အခက်အခဲ များစွာ ဖြစ်ပေါ်စေမှာပါ။ လိုရင်းကတော့ variable နာမည်ကို ပြန်ဖတ်ရင် အဓိပ္ပာယ်ရှိအောင်၊ ပြန်ရှာလို့လွယ်အောင် ပေးပါ။
+
+**မဖြစ်သင့်:**
 
 ```php
-// What the heck is 448 for?
+// 448 ဆိုတာ ဘာကြီးလဲ၊ ဘာကိုဆိုလိုတာလဲ
 $result = $serializer->serialize($data, 448);
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 $json = $serializer->serialize($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
