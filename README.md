@@ -246,7 +246,7 @@ function isShopOpen(string $day): bool
 
 **[⬆ back to top](#မာတိကာ)**
 
-### ### Nested if-else statement တွေကို တတ်နိုင်သလောက် ရှောင်ပါ။ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်ပါ။ (အပိုင်း ၂)
+### Nested if-else statement တွေကို တတ်နိုင်သလောက် ရှောင်ပါ။ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်ပါ။ (အပိုင်း ၂)
 
 **မဖြစ်သင့်:**
 
