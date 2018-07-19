@@ -190,12 +190,18 @@ saveCityZipCode($matches['city'], $matches['zipCode']);
 
 **[⬆ back to top](#မာတိကာ)**
 
-### Avoid nesting too deeply and return early (part 1)
+### Nested if-else statement တွေကို တတ်နိုင်သလောက် ရှောင်ပါ။ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်ပါ။ (အပိုင်း ၁)
 
-Too many if-else statements can make your code hard to follow. Explicit is better
-than implicit.
+if-else statement တွေ သိပ်များသွားရင် code ကို trace လိုက်ရတာ ခက်ခဲသွားစေပါတယ်။ နောက်တစ်ခု ယူဆလို့ ရတာက ကိုယ့် ရေးတဲ့ function ထဲမှာ if-else statement တွေ ၂ ခု ၃ ခုထက် ပိုနေပြီဆိုရင် ကိုယ့် function က အလုပ်တစ်ခုထက် မက လုပ်နေပြီလို့ ယူဆလို့ ရပါတယ်။ function တစ်ခုက လုပ်ဆောင်ချက် တစ်ခုဘဲ ရှိသင့်ပါတယ်။ ဒီလို အခါမျိုးမှာ Polymorphism (သို့) State/Strategy pattern နဲ့ ပြန်ပြီး code ကို refactor လုပ်လို့ ရပါတယ်။
 
-**Bad:**
+function တစ်ခုကနေ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်သင့်ပါတယ်။ ဒီအချက်ကလည်း function တစ်ခုကို trace လိုက်ရတာ အတော်လေး ခက်ခဲသွားစေနိုင်တဲ့ အချက်ပါ။ return statement အများဆုံး ဘယ်လောက်ဘဲ ရှိသင့်တယ်လို့တော့ အတိအကျ သတ်မှတ်ထားတာ မရှိပါဘူး။ နည်းနိုင်သမျှ နည်းတာတော့ ကောင်းပါတယ်။
+ကိုယ်ပိုင်အမြင်အရ Returning early ဆိုတဲ့ အယူအဆ မျိုးတော့ ရှိပါတယ်။ ဥပမာ - file download လုပ်တဲ့ function တစ်ခုမှာ Internet connection မရှိရင် exception တက်တာဘဲဖြစ်ဖြစ်၊ return false ပြန်တာဘဲဖြစ်ဖြစ်ကို function ရဲ့ အပေါ်ဆုံး code line တွေမှာ ရေးလို့ ရပါတယ်။ ဒါပေမယ့် function ကို ဖတ်ရတာ ပိုကောင်းသွားစေတယ်လို့ သေချာမှသာ ဒီလိုမျိုး ရေးသင့်ပါတယ်။
+
+စာခြွင်း ရှင်းလင်းချက်:
+trace လိုက်တယ်ဆိုတာ code တကြောင်းခြင်းစီက ဘာအလုပ်လုပ်သွားလဲ၊ ဘာ output ထွက်သွားလဲဆိုတာ လိုက်ကြည့်တယ်လို့ ယေဘုယျနားလည်လို့ ရပါတယ်။ PHP မှာဆိုရင် xdebug နဲ့ debug လိုက်ကြည့်သလိုမျိုး၊ var_dump နဲ့ print ထုတ်ကြည့်သလိုမျိုးပေါ့။ ဒီလို tools တွေနဲ့ မဟုတ်ဘဲ စိတ်ထဲမှာဘဲဖြစ်စေ၊ စာအုပ်ပေါ်မှာ ချရေးပြီးတော့ ဖြစ်စေ step by step စိတ်မှန်းနဲ့လည်း trace လိုက်သွားတာမျိုးလည်း ရှိပါတယ်။ အဲဒါကို term အရ Dry Run လို့ ခေါ်ပါတယ်။
+ပုံမှန် trace ကို code ရဲ့ ဘယ်နားက error တက်သွားလဲဆိုတာသိဖို့ လိုက်ကြတာ များပါတယ်။ သို့မဟုတ် သူများရေးထားတဲ့ (ကိုယ်အရင်က ရေးထားပေမယ့် မေ့သွားတဲ့) code တွေကို နားလည်အောင် ပြန် ဖတ်တဲ့ အခါမျိုးမှာလည်း သုံးပါတယ်။
+
+**မဖြစ်သင့်:**
 
 ```php
 function isShopOpen($day): bool
@@ -221,7 +227,7 @@ function isShopOpen($day): bool
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 function isShopOpen(string $day): bool
@@ -240,9 +246,9 @@ function isShopOpen(string $day): bool
 
 **[⬆ back to top](#မာတိကာ)**
 
-### Avoid nesting too deeply and return early (part 2)
+### ### Nested if-else statement တွေကို တတ်နိုင်သလောက် ရှောင်ပါ။ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်ပါ။ (အပိုင်း ၂)
 
-**Bad:**
+**မဖြစ်သင့်:**
 
 ```php
 function fibonacci(int $n)
@@ -263,7 +269,7 @@ function fibonacci(int $n)
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 function fibonacci(int $n): int
