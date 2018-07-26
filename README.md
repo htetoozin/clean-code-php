@@ -153,7 +153,15 @@ if ($user->access & User::ACCESS_UPDATE) {
 
 ### Use explanatory variables
 
-**Bad:**
+Variable တွေကို အဓိပ္ပာယ်ပေါ်အောင် နာမည်ကောင်းကောင်း ပေးတတ်ရုံနဲ့ မလုံလောက်သေးပါဘူး။ Variable ကို အသုံးပြုမယ့် scope နဲ့ code statement ပေါ်မူတည်ပြီး မှန်ကန်အောင် ရေးတတ်ရပါသေးတယ်။ Technically အရ Scope in mind လို့ ခေါ်ပါတယ်။ 
+
+Variable ကို အသုံးပြုထားတဲ့ code statement ကို ကြည့်ရုံနဲ့ variable ထဲမှာ ဘာ data သိမ်းပြီး process လုပ်သွားတာလဲ၊ ဘာ ရည်ရွယ်ချက်နဲ့ code statement မှာ သုံးသွားလဲဆိုတဲ့ အဓိပ္ပာယ်ပေါ်အောင်လည်း ရေးတတ်ရပါတယ်။
+
+**မဖြစ်သင့်::**
+
+အောက်ပါ ဥပမာမှာဆို regular expression ကို process လုပ်သွားတဲ့ preg_match function ထဲမှာ ပေးထားတဲ့ $matches ဆိုတဲ့ variable ဟာ သူ အဓိပ္ပာယ်နဲ့သူ မှန်နေပါတယ်။
+
+ဒါပေမယ့် saveCityZipCode function မှာ Parameter အနေနဲ့ပေးတဲ့အခါကျတော့ $matches[1], $matches[2] လို့ ပေးလိုက်တာဟာ code statement ကို ဖတ်ရတာ ဝေဝါးသွားစေပါတယ်။ $matches[1] ဆိုတာ $matches ဆိုတဲ့ array ရဲ့ ပထမအခန်းကို ရည်ညွှန်းမှန်းသိပေမယ့် အဲ့ဒီ ပထမအခန်းထဲမှာ ဘာ data သိမ်းထားမှန်းဆိုတာကတော့ မသိရတော့ပါဘူး။ အဲဒီတော့ code ကို maintain လုပ်မယ့်သူက အပေါ်က Regular Expression ကို အသေးစိတ်နားလည်အောင် သွားဖတ်ရပါတော့မယ်။
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
@@ -163,9 +171,13 @@ preg_match($cityZipCodeRegex, $address, $matches);
 saveCityZipCode($matches[1], $matches[2]);
 ```
 
-**Not bad:**
+**အသင့်အတင့်:**
 
-It's better, but we are still heavily dependent on regex.
+အောက်က ပိုမိုကောင်းမွန်အောင် ပြန်လည်ပြင်ဆင်ထားတဲ့ ဥပမာကို ကြည့်ပါဦး။
+
+ဒီဥပမာမှာတော့ saveCityZipCode function ရေးသားပုံက ကောင်းမွန်သွားပါပြီ။ ဒါပေသိ [, $city, $zipCode] = $matches ဆိုတဲ့ code line ဟာ code နားလည်လွယ်အောင် အပိုရေးလိုက်ရတဲ့ code တစ်ကြောင်းပုံစံ ဖြစ်သွားပါတယ်။ တကယ့် ရှုပ်ထွေးမှုတွေကို ဖြစ်ပေါ်စေတဲ့ regular expression ကို မရှင်းဘဲ code အပိုတစ်ကြောင်း ရေးလိုက်သလို ဖြစ်သွားတာပါ။
+
+စာခြွင်း။ ။ တကယ့်လက်တွေ့မှာတော့ ဒီဥပမာက code ရေးသားမှုပုံစံဟာ လက်သင့်ခံလို့ ရပါတယ်။ အခုလောက် ရှင်းလင်းသပ်ရပ်မှု ရှိပြီဆိုရင် မဆိုးဘူးလို့ ပြောလို့ရပါပြီ။ ဘာဖြစ်လို့လဲဆိုရင် တကယ်လက်တွေ့ Project တွေမှာက အချိန်ဒီလောက် မပေးပါဘူး။ refactoring လုပ်ရင်း feature အသစ်ရေးရမယ့် အချိန်တွေပါ ကုန်သွားမှာကိုလည်း ဆင်ခြင်သင့်ပါတယ်။
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
@@ -176,9 +188,9 @@ preg_match($cityZipCodeRegex, $address, $matches);
 saveCityZipCode($city, $zipCode);
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
-Decrease dependence on regex by naming subpatterns.
+အခု ဥပမာမှာတော့ code ရေးသားမှုဟာ အကောင်းဆုံးပုံစံကို ရောက်ရှိသွားပြီလို့ ယူဆလို့ ရပါတယ်။ တကယ့် ရှုပ်ထွေးမှုကို ဖြစ်စေတဲ့ regular expression ကို ရှင်းလင်းအောင် subpattern တွေကို နာမည်ပေးပြီး ဖြေရှင်းလိုက်နိုင်ပါတယ်။  code ရေးသားမှုမှာလည်း အပိုအလို မရှိ ကျစ်လစ်သွားပါတယ်။
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
