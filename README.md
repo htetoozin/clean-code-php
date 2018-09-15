@@ -4,7 +4,7 @@
 
   1. [Introduction](#introduction)
   2. [Variables](#variables)
-     * [Use meaningful and pronounceable variable names](#use-meaningful-and-pronounceable-variable-names)
+     * [Use meaningful and pronounceable variable names](#Variable-တွေနာမည်ပေးတဲ့အခါ-ထင်ရှားတဲ့-အဓိပ္ပာယ်ရှိပြီး-အသံထွက်ဖတ်လို့ရတဲ့-စကားလုံးမျိုးတွေကိုသာ-ရွေးချယ်သင့်ပါတယ်။)
      * [Use the same vocabulary for the same type of variable](#use-the-same-vocabulary-for-the-same-type-of-variable)
      * [Use searchable names (part 1)](#use-searchable-names-part-1)
      * [Use searchable names (part 2)](#use-searchable-names-part-2)
@@ -302,10 +302,10 @@ function fibonacci(int $n): int
 
 ### Avoid Mental Mapping
 
-Don’t force the reader of your code to translate what the variable means.
-Explicit is better than implicit.
+ဒီ အချက်ကတော့ အပေါ်ကအချက်တွေကိုဘဲ မူကွဲပုံစံ တစ်မျိုးနဲ့ ပြောထားတာပါ။
+Variable တစ်ခုကို နားလည်ဖို့ သူ့ထဲမှာ သိမ်းထားတဲ့ data ကို သွားဖတ်ပြီးမှ သိရတာမျိုးက မကောင်းပါဘူး။ ရှင်းလင်းပြတ်သားခြင်းက သွယ်ဝိုက်နေတာထက် ပိုကောင်းပါတယ်။
 
-**Bad:**
+**မဖြစ်သင့်:**
 
 ```php
 $l = ['Austin', 'New York', 'San Francisco'];
@@ -322,7 +322,7 @@ for ($i = 0; $i < count($l); $i++) {
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 $locations = ['Austin', 'New York', 'San Francisco'];
