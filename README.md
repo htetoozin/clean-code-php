@@ -4,7 +4,7 @@
 
   1. [Introduction](#introduction)
   2. [Variables](#variables)
-     * [Use meaningful and pronounceable variable names](#Variable-တွေနာမည်ပေးတဲ့အခါ-ထင်ရှားတဲ့-အဓိပ္ပာယ်ရှိပြီး-အသံထွက်ဖတ်လို့ရတဲ့-စကားလုံးမျိုးတွေကိုသာ-ရွေးချယ်သင့်ပါတယ်။)
+     * [Use meaningful and pronounceable variable names](#use-meaningful-and-pronounceable-variable-names)
      * [Use the same vocabulary for the same type of variable](#use-the-same-vocabulary-for-the-same-type-of-variable)
      * [Use searchable names (part 1)](#use-searchable-names-part-1)
      * [Use searchable names (part 2)](#use-searchable-names-part-2)
@@ -66,7 +66,8 @@ Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-cod
 
 ## Variables
 
-### Variable တွေနာမည်ပေးတဲ့အခါ ထင်ရှားတဲ့ အဓိပ္ပာယ်ရှိပြီး အသံထွက်ဖတ်လို့ရတဲ့ စကားလုံးမျိုးတွေကိုသာ ရွေးချယ်သင့်ပါတယ်။
+### Use meaningful and pronounceable variable names
+Variable တွေနာမည်ပေးတဲ့အခါ ထင်ရှားတဲ့ အဓိပ္ပာယ်ရှိပြီး အသံထွက်ဖတ်လို့ရတဲ့ စကားလုံးမျိုးတွေကိုသာ ရွေးချယ်သင့်ပါတယ်။
 
 **မဖြစ်သင့်:**
 
