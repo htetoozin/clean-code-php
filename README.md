@@ -66,8 +66,9 @@ Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-cod
 
 ## Variables
 
-### Use meaningful and pronounceable variable names
-Variable တွေနာမည်ပေးတဲ့အခါ ထင်ရှားတဲ့ အဓိပ္ပာယ်ရှိပြီး အသံထွက်ဖတ်လို့ရတဲ့ စကားလုံးမျိုးတွေကိုသာ ရွေးချယ်သင့်ပါတယ်။
+<a name="use-meaningful-and-pronounceable-variable-names">
+### Variable တွေနာမည်ပေးတဲ့အခါ ထင်ရှားတဲ့ အဓိပ္ပာယ်ရှိပြီး အသံထွက်ဖတ်လို့ရတဲ့ စကားလုံးမျိုးတွေကိုသာ ရွေးချယ်သင့်ပါတယ်။
+</a>
 
 **မဖြစ်သင့်:**
 
