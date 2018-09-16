@@ -66,9 +66,9 @@ Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-cod
 
 ## Variables
 
-<a name="use-meaningful-and-pronounceable-variable-names">
-### Variable တွေနာမည်ပေးတဲ့အခါ ထင်ရှားတဲ့ အဓိပ္ပာယ်ရှိပြီး အသံထွက်ဖတ်လို့ရတဲ့ စကားလုံးမျိုးတွေကိုသာ ရွေးချယ်သင့်ပါတယ်။
-</a>
+### Use meaningful and pronounceable variable names
+
+Variable တွေနာမည်ပေးတဲ့အခါ ထင်ရှားတဲ့ အဓိပ္ပာယ်ရှိပြီး အသံထွက်ဖတ်လို့ရတဲ့ စကားလုံးမျိုးတွေကိုသာ ရွေးချယ်သင့်ပါတယ်။
 
 **မဖြစ်သင့်:**
 
@@ -84,7 +84,9 @@ $currentDate = $moment->format('y-m-d');
 
 **[⬆ back to top](#မာတိကာ)**
 
-### အမျိုးအစားတူတဲ့ variable တွေအတွက် နာမည်ပေးတဲ့အခါ တူညီတဲ့ ဝေါဟာရတခုတည်းကိုသာ တသတ်မတ်တည်း အသုံးပြုသင့်ပါတယ်။
+### Use the same vocabulary for the same type of variable
+
+အမျိုးအစားတူတဲ့ variable တွေအတွက် နာမည်ပေးတဲ့အခါ တူညီတဲ့ ဝေါဟာရတခုတည်းကိုသာ တသတ်မတ်တည်း အသုံးပြုသင့်ပါတယ်။
 
 **မဖြစ်သင့်:**
 
