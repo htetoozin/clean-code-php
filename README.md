@@ -206,7 +206,9 @@ saveCityZipCode($matches['city'], $matches['zipCode']);
 
 **[⬆ back to top](#မာတိကာ)**
 
-### Nested if-else statement တွေကို တတ်နိုင်သလောက် ရှောင်ပါ။ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်ပါ။ (အပိုင်း ၁)
+### Avoid nesting too deeply and return early (part 1)
+
+Nested if-else statement တွေကို တတ်နိုင်သလောက် ရှောင်ပါ။ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်ပါ။ (အပိုင်း ၁)
 
 if-else statement တွေ သိပ်များသွားရင် code ကို trace လိုက်ရတာ ခက်ခဲသွားစေပါတယ်။ နောက်တစ်ခု ယူဆလို့ ရတာက ကိုယ့် ရေးတဲ့ function ထဲမှာ if-else statement တွေ ၂ ခု ၃ ခုထက် ပိုနေပြီဆိုရင် ကိုယ့် function က အလုပ်တစ်ခုထက် မက လုပ်နေပြီလို့ ယူဆလို့ ရပါတယ်။ function တစ်ခုက လုပ်ဆောင်ချက် တစ်ခုဘဲ ရှိသင့်ပါတယ်။ ဒီလို အခါမျိုးမှာ Polymorphism (သို့) State/Strategy pattern နဲ့ ပြန်ပြီး code ကို refactor လုပ်လို့ ရပါတယ်။
 
@@ -262,7 +264,7 @@ function isShopOpen(string $day): bool
 
 **[⬆ back to top](#မာတိကာ)**
 
-### Nested if-else statement တွေကို တတ်နိုင်သလောက် ရှောင်ပါ။ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်ပါ။ (အပိုင်း ၂)
+### Avoid nesting too deeply and return early (part 2)
 
 **မဖြစ်သင့်:**
 
@@ -345,10 +347,13 @@ foreach ($locations as $location) {
 
 ### Don't add unneeded context
 
-If your class/object name tells you something, don't repeat that in your
-variable name.
+ဖော်ပြခဲ့သမျှ အချက်တွေကတော့ Variable နာမည် ပေးတဲ့အခါ တတ်နိုင်သမျှ ပြည့်စုံရှင်းလင်းအောင် ရေးဖို့ ပြောထားတာပါ။
+ဒါပေမယ့် မလိုအပ်ဘဲ စကားဆက် (context) တွေ မထည့်မိဖို့လည်း အရေးကြီးပါတယ်။
 
-**Bad:**
+ဥပမာပေးရမယ်ဆိုရင် class/object ထဲက member variable တိုင်းမှာ class နာမည်ကြီးကို ရှေ့က လိုက်ထည့်နေတာမျိုးပါ။ "User" class ထဲမှာ user ရဲ့ အသက်ကိုသိမ်းဖို့ variable ကို နာမည်ပေးတဲ့အခါ age ဆိုရင် လုံလောက်ပါပြီ။ userAge ဆိုပြီး စကားဆက် (context) ကို ရှေ့ကခံပေးစရာ မလိုပါဘူး။ ဘာဖြစ်လို့လဲဆိုရင်အဲ့ဒီ age ဆိုတဲ့ member variable ကို ခေါ်သုံးတဲ့အခါ user->age ဆိုပြီး ခေါ်သုံးရမှာ ဖြစ်လို့ပါ။
+user->age ဆိုတဲ့ code expression ကို ကြည့်မယ်ဆိုရင် user ရဲ့ age ကို ရည်ညွှန်းမှန်း သိသာပါတယ်။ 
+
+**မဖြစ်သင့်:**
 
 ```php
 class Car
@@ -361,7 +366,7 @@ class Car
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 class Car
@@ -378,9 +383,17 @@ class Car
 
 ### Use default arguments instead of short circuiting or conditionals
 
-**Not good:**
+Programmer ေတြအေနနဲ႔ Function ေတြကို ေရးတဲ့အခါတိုင္း parameter declaration ဆိုတာကို တနည္းမဟုတ္တနည္းနဲ႔ေတာ့ ၾကံဳၾကရတာပါဘဲ။
 
-This is not good because `$breweryName` can be `NULL`.
+Parameter ေၾကျငာတဲ့အခါ အဲဒီ parameter အတြက္ default value သတ္မွတ္ေပးဖို႔ လိုအပ္တဲ့ အခါတိုင္း default argument ေၾကျငာတဲ့ပံုစံမ်ိဳးနဲ႔ဘဲ ေရးသင့္ပါတယ္။ Ternary conditional ပံုစံေတြ၊ short circuiting ပံုစံေတြနဲ႔ မေရးသင့္ပါဘူး။
+
+စာျခြင္း။ ။ short circuiting ဆိုတဲ့ term က တခ်ိဳ႕ေသာ developer ေတြအတြက္ အနည္းငယ္ စိမ္းေနႏိုင္ပါတယ္။ ဒီ [wiki link](https://en.wikipedia.org/wiki/Short-circuit_evaluation) နဲ႔ [stackoverflow link](https://stackoverflow.com/questions/9344305/what-is-short-circuiting-and-how-is-it-used-when-programming-in-java) မွာေတာ႔ ရွင္းထားတာ အေတာ္ေလး ေကာင္းပါတယ္။
+
+**မဖြစ်သင့်:**
+
+ဒီရေးသားမှုပုံစံဟာ လိုအပ်ချက်ရှိနေသေးတယ်လို့ ယူဆလို့ ရပါတယ်။ အောက်ပါ function ကိုသာ `$this->createMicrobrewery(null)` နဲ့ call လိုက်ရင် `$breweryName` ဟာ ဖြစ်စေခြင်တဲ့ default value “Hipster Brew Co.” အစား `null value` ဝင်သွားမှာပါ။
+
+စာခြွင်း။ ။ ကိုယ်ပိုင်အမြင်အရဆိုရင် ဒီရေးသားမှုပုံစံဟာ function ရဲ့ argument control ကို လျှော့ကျသွားတယ် ဆိုရုံလောက်ဘဲ ယူဆလို့ ရတာပါ။ **Php** လို dynamic typing language တစ်ခုမှာ function parameter တစ်ခုကို `null value` ဝင်တာနဲ့ မကောင်းဘူးပြောဖို့ဆိုတာ အနည်းငယ် တဖက္သက္ဆန်တယ်လို့ ခံစားမိပါတယ်။ 
 
 ```php
 function createMicrobrewery($breweryName = 'Hipster Brew Co.'): void
@@ -389,9 +402,13 @@ function createMicrobrewery($breweryName = 'Hipster Brew Co.'): void
 }
 ```
 
-**Not bad:**
+**အသင့်အတင့်:**
 
-This opinion is more understandable than the previous version, but it better controls the value of the variable.
+ဒီရေးသားမှုပုံစံကတော့ မဆိုးဘူးလို့ ပြောလို့ရပါပြီ။ default value ကို `null` လို့ ထားလိုက်တယ်။ ပြီးမှ function body ထဲမှာ **ternary operator** နဲ့ `null` ဖြစ်ခဲ့ရင် actual default value “Hipster Brew Co.” ထည့်မယ်ဆိုပြီး ရေးလိုက်ပါတယ်။
+
+ဒါကြောင့် argument မသတ်မှတ်ဘဲ function call လိုက်သည်ဖြစ်စေ၊ `null` or `empty value` ပေးလိုက်သည်ဖြစ်စေ `$breweryName` parameter ဟာ actual default value “Hipster Brew Co.” ရှိနေတော့မှာပါ။
+
+စာခြွင်း။ ။ ဒီ ရေးသားမှုမှာလည်း မိမိကိုယ်ပိုင်အမြင်အရ ဆိုရင် အရမ်းကြီး သဘောမတူခြင်ပါဘူး။ default argument ဆိုတာ `null value` ကို ရှောင်ခြင်လို့ ရေးရတာမျိုး မဟုတ်ပါဘူး။ function call တဲ့ အချိန်မှာ လိုအပ်တဲ့ parameter အတွက် argument မပေးခဲ့ဘူးဆိုရင် logic အရ default value တစ်ခု သတ်မှတ်ပေးလိုက်တဲ့ သဘောပါ။
 
 ```php
 function createMicrobrewery($name = null): void
@@ -401,9 +418,11 @@ function createMicrobrewery($name = null): void
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
- You can use [type hinting](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) and be sure that the `$breweryName` will not be `NULL`.
+ဒီ ရေးသားမှုမှာတော့ Php7 ရဲ့ [type hinting](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) feature ကို အသုံးပြုပြီး argument ကို string datatype နဲ့ restrict လုပ်လိုက်ပါတယ်။ ဒါကြောင့် `null value` ဝင်လာခဲ့ရင် `exception` တက်မှာပါ။
+
+`Null value` ဖြစ်မှာလည်း စိုးရိမ်စရာ မလိုတော့သလို default argument လည်း ကြေငြာပြီးသား ဖြစ်သွားစေတဲ့အတွက် ကောင်းမွန်တဲ့ ရေးသားမှုတစ်ခုလို့ ဆိုလို့ရပါတယ်။
 
 ```php
 function createMicrobrewery(string $breweryName = 'Hipster Brew Co.'): void
