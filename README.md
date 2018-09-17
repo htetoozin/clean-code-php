@@ -393,7 +393,7 @@ Parameter ကြေငြာတဲ့အခါ အဲဒီ parameter အတွ�
 
 ဒီရေးသားမှုပုံစံဟာ လိုအပ်ချက်ရှိနေသေးတယ်လို့ ယူဆလို့ ရပါတယ်။ အောက်ပါ function ကိုသာ `$this->createMicrobrewery(null)` နဲ့ call လိုက်ရင် `$breweryName` ဟာ ဖြစ်စေခြင်တဲ့ default value “Hipster Brew Co.” အစား `null value` ဝင်သွားမှာပါ။
 
-စာခြွင်း။ ။ ကိုယ်ပိုင်အမြင်အရဆိုရင် ဒီရေးသားမှုပုံစံဟာ function ရဲ့ argument control ကို လျှော့ကျသွားတယ် ဆိုရုံလောက်ဘဲ ယူဆလို့ ရတာပါ။ **Php** လို dynamic typing language တစ်ခုမှာ function parameter တစ်ခုကို null value ဝင်တာနဲ့ မကောင်းဘူးပြောဖို့ဆိုတာ အနည်းငယ် တဖက်သက်တယ်လို့ ခံစားမိပါတယ်။ 
+စာခြွင်း။ ။ ကိုယ်ပိုင်အမြင်အရဆိုရင် ဒီရေးသားမှုပုံစံဟာ function ရဲ့ argument control ကို လျှော့ကျသွားတယ် ဆိုရုံလောက်ဘဲ ယူဆလို့ ရတာပါ။ **Php** လို dynamic typing language တစ်ခုမှာ function parameter တစ်ခုကို null value ဝင်တာနဲ့ မကောင်းဘူးပြောဖို့ဆိုတာ အနည်းငယ် တဖက်သက်ဆန်တယ်လို့ ခံစားမိပါတယ်။
 
 ```php
 function createMicrobrewery($breweryName = 'Hipster Brew Co.'): void
