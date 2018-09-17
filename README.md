@@ -383,11 +383,11 @@ class Car
 
 ### Use default arguments instead of short circuiting or conditionals
 
-Programmer ေတြအေနနဲ႔ Function ေတြကို ေရးတဲ့အခါတိုင္း parameter declaration ဆိုတာကို တနည္းမဟုတ္တနည္းနဲ႔ေတာ့ ၾကံဳၾကရတာပါဘဲ။
+Programmer တွေအနေနဲ့ Function တွေကို ရေးတဲ့အခါတိုင်း parameter declaration ဆိုတာကို တနည်းမဟုတ်တနည်းနဲ့တော့ ကြုံကြရတာပါဘဲ။
 
-Parameter ေၾကျငာတဲ့အခါ အဲဒီ parameter အတြက္ default value သတ္မွတ္ေပးဖို႔ လိုအပ္တဲ့ အခါတိုင္း default argument ေၾကျငာတဲ့ပံုစံမ်ိဳးနဲ႔ဘဲ ေရးသင့္ပါတယ္။ Ternary conditional ပံုစံေတြ၊ short circuiting ပံုစံေတြနဲ႔ မေရးသင့္ပါဘူး။
+Parameter ကြေငြာတဲ့အခါ အဲဒီ parameter အတွက် default value သတ်မှတ်ပေးဖို့ လိုအပ်တဲ့ အခါတိုင်း default argument ကြေငြာတဲ့ပုံစံမျိုးနဲ့ဘဲ ရေးသင့်ပါတယ်။ Ternary conditional ပုံစံတွေ၊ short circuiting ပုံစံတွေနဲ့ မရေးသင့်ပါဘူး။
 
-စာျခြင္း။ ။ short circuiting ဆိုတဲ့ term က တခ်ိဳ႕ေသာ developer ေတြအတြက္ အနည္းငယ္ စိမ္းေနႏိုင္ပါတယ္။ ဒီ [wiki link](https://en.wikipedia.org/wiki/Short-circuit_evaluation) နဲ႔ [stackoverflow link](https://stackoverflow.com/questions/9344305/what-is-short-circuiting-and-how-is-it-used-when-programming-in-java) မွာေတာ႔ ရွင္းထားတာ အေတာ္ေလး ေကာင္းပါတယ္။
+စာခြွင်း။ ။ short circuiting ဆိုတဲ့ term က တချို့သော developer တွေအတွက် အနည်းငယ် စိမ်းနေနိုင်ပါတယ်။ ဒီ [wiki link](https://en.wikipedia.org/wiki/Short-circuit_evaluation) နဲ့ [stackoverflow link](https://stackoverflow.com/questions/9344305/what-is-short-circuiting-and-how-is-it-used-when-programming-in-java) မှာတော့ ရှင်းထားတာ အတော်လေး ကောင်းပါတယ်။
 
 **မဖြစ်သင့်:**
 
