@@ -213,10 +213,12 @@ Nested if-else statement တွေကို တတ်နိုင်သလော
 if-else statement တွေ သိပ်များသွားရင် code ကို trace လိုက်ရတာ ခက်ခဲသွားစေပါတယ်။ နောက်တစ်ခု ယူဆလို့ ရတာက ကိုယ့် ရေးတဲ့ function ထဲမှာ if-else statement တွေ ၂ ခု ၃ ခုထက် ပိုနေပြီဆိုရင် ကိုယ့် function က အလုပ်တစ်ခုထက် မက လုပ်နေပြီလို့ ယူဆလို့ ရပါတယ်။ function တစ်ခုက လုပ်ဆောင်ချက် တစ်ခုဘဲ ရှိသင့်ပါတယ်။ ဒီလို အခါမျိုးမှာ Polymorphism (သို့) State/Strategy pattern နဲ့ ပြန်ပြီး code ကို refactor လုပ်လို့ ရပါတယ်။
 
 function တစ်ခုကနေ return statement တွေ အများကြီး ပြန်တာမျိုးတွေကိုလည်း ရှောင်သင့်ပါတယ်။ ဒီအချက်ကလည်း function တစ်ခုကို trace လိုက်ရတာ အတော်လေး ခက်ခဲသွားစေနိုင်တဲ့ အချက်ပါ။ return statement အများဆုံး ဘယ်လောက်ဘဲ ရှိသင့်တယ်လို့တော့ အတိအကျ သတ်မှတ်ထားတာ မရှိပါဘူး။ နည်းနိုင်သမျှ နည်းတာတော့ ကောင်းပါတယ်။
-ကိုယ်ပိုင်အမြင်အရ Returning early ဆိုတဲ့ အယူအဆ မျိုးတော့ ရှိပါတယ်။ ဥပမာ - file download လုပ်တဲ့ function တစ်ခုမှာ Internet connection မရှိရင် exception တက်တာဘဲဖြစ်ဖြစ်၊ return false ပြန်တာဘဲဖြစ်ဖြစ်ကို function ရဲ့ အပေါ်ဆုံး code line တွေမှာ ရေးလို့ ရပါတယ်။ ဒါပေမယ့် function ကို ဖတ်ရတာ ပိုကောင်းသွားစေတယ်လို့ သေချာမှသာ ဒီလိုမျိုး ရေးသင့်ပါတယ်။
+
+Returning early ဆိုတဲ့ အယူအဆ မျိုးတော့ ရှိပါတယ်။ ဥပမာ - file download လုပ်တဲ့ function တစ်ခုမှာ Internet connection မရှိရင် exception တက်တာဘဲဖြစ်ဖြစ်၊ return false ပြန်တာဘဲဖြစ်ဖြစ်ကို function ရဲ့ အပေါ်ဆုံး code line တွေမှာ ရေးလို့ ရပါတယ်။ ဒါပေမယ့် function ကို ဖတ်ရတာ ပိုကောင်းသွားစေတယ်လို့ သေချာမှသာ ဒီလိုမျိုး ရေးသင့်ပါတယ်။
 
 စာခြွင်း ရှင်းလင်းချက်:
 trace လိုက်တယ်ဆိုတာ code တကြောင်းခြင်းစီက ဘာအလုပ်လုပ်သွားလဲ၊ ဘာ output ထွက်သွားလဲဆိုတာ လိုက်ကြည့်တယ်လို့ ယေဘုယျနားလည်လို့ ရပါတယ်။ PHP မှာဆိုရင် xdebug နဲ့ debug လိုက်ကြည့်သလိုမျိုး၊ var_dump နဲ့ print ထုတ်ကြည့်သလိုမျိုးပေါ့။ ဒီလို tools တွေနဲ့ မဟုတ်ဘဲ စိတ်ထဲမှာဘဲဖြစ်စေ၊ စာအုပ်ပေါ်မှာ ချရေးပြီးတော့ ဖြစ်စေ step by step စိတ်မှန်းနဲ့လည်း trace လိုက်သွားတာမျိုးလည်း ရှိပါတယ်။ အဲဒါကို term အရ Dry Run လို့ ခေါ်ပါတယ်။
+
 ပုံမှန် trace ကို code ရဲ့ ဘယ်နားက error တက်သွားလဲဆိုတာသိဖို့ လိုက်ကြတာ များပါတယ်။ သို့မဟုတ် သူများရေးထားတဲ့ (ကိုယ်အရင်က ရေးထားပေမယ့် မေ့သွားတဲ့) code တွေကို နားလည်အောင် ပြန် ဖတ်တဲ့ အခါမျိုးမှာလည်း သုံးပါတယ်။
 
 **မဖြစ်သင့်:**
@@ -308,7 +310,7 @@ function fibonacci(int $n): int
 
 ### Avoid Mental Mapping
 
-ဒီ အချက်ကတော့ အပေါ်ကအချက်တွေကိုဘဲ မူကွဲပုံစံ တစ်မျိုးနဲ့ ပြောထားတာပါ။
+ဒီအချက်ကတော့ အပေါ်ကအချက်တွေကိုဘဲ မူကွဲပုံစံ တစ်မျိုးနဲ့ ပြောထားတာပါ။
 Variable တစ်ခုကို နားလည်ဖို့ သူ့ထဲမှာ သိမ်းထားတဲ့ data ကို သွားဖတ်ပြီးမှ သိရတာမျိုးက မကောင်းပါဘူး။ ရှင်းလင်းပြတ်သားခြင်းက သွယ်ဝိုက်နေတာထက် ပိုကောင်းပါတယ်။
 
 **မဖြစ်သင့်:**
@@ -350,8 +352,7 @@ foreach ($locations as $location) {
 ဖော်ပြခဲ့သမျှ အချက်တွေကတော့ Variable နာမည် ပေးတဲ့အခါ တတ်နိုင်သမျှ ပြည့်စုံရှင်းလင်းအောင် ရေးဖို့ ပြောထားတာပါ။
 ဒါပေမယ့် မလိုအပ်ဘဲ စကားဆက် (context) တွေ မထည့်မိဖို့လည်း အရေးကြီးပါတယ်။
 
-ဥပမာပေးရမယ်ဆိုရင် class/object ထဲက member variable တိုင်းမှာ class နာမည်ကြီးကို ရှေ့က လိုက်ထည့်နေတာမျိုးပါ။ "User" class ထဲမှာ user ရဲ့ အသက်ကိုသိမ်းဖို့ variable ကို နာမည်ပေးတဲ့အခါ age ဆိုရင် လုံလောက်ပါပြီ။ userAge ဆိုပြီး စကားဆက် (context) ကို ရှေ့ကခံပေးစရာ မလိုပါဘူး။ ဘာဖြစ်လို့လဲဆိုရင်အဲ့ဒီ age ဆိုတဲ့ member variable ကို ခေါ်သုံးတဲ့အခါ user->age ဆိုပြီး ခေါ်သုံးရမှာ ဖြစ်လို့ပါ။
-user->age ဆိုတဲ့ code expression ကို ကြည့်မယ်ဆိုရင် user ရဲ့ age ကို ရည်ညွှန်းမှန်း သိသာပါတယ်။ 
+ဥပမာပေးရမယ်ဆိုရင် class/object ထဲက member variable တိုင်းမှာ class နာမည်ကြီးကို ရှေ့က လိုက်ထည့်နေတာမျိုးပါ။ "User" class ထဲမှာ user ရဲ့ အသက်ကိုသိမ်းဖို့ variable ကို နာမည်ပေးတဲ့အခါ age ဆိုရင် လုံလောက်ပါပြီ။ userAge ဆိုပြီး စကားဆက် (context) ကို ရှေ့ကခံပေးစရာ မလိုပါဘူး။ ဘာဖြစ်လို့လဲဆိုရင်အဲ့ဒီ age ဆိုတဲ့ member variable ကို ခေါ်သုံးတဲ့အခါ `user->age` ဆိုပြီး ခေါ်သုံးရမှာ ဖြစ်လို့ပါ။  `user->age` ဆိုတဲ့ code expression ကို ကြည့်မယ်ဆိုရင် user ရဲ့ age ကို ရည်ညွှန်းမှန်း သိသာပါတယ်။ 
 
 **မဖြစ်သင့်:**
 
@@ -385,15 +386,15 @@ class Car
 
 Programmer တွေအနေနဲ့ Function တွေကို ရေးတဲ့အခါတိုင်း parameter declaration ဆိုတာကို တနည်းမဟုတ်တနည်းနဲ့တော့ ကြုံကြရတာပါဘဲ။
 
-Parameter ကြေငြာတဲ့အခါ အဲဒီ parameter အတွက် default value သတ်မှတ်ပေးဖို့ လိုအပ်တဲ့ အခါတိုင်း default argument ကြေငြာတဲ့ပုံစံမျိုးနဲ့ဘဲ ရေးသင့်ပါတယ်။ Ternary conditional ပုံစံတွေ၊ short circuiting ပုံစံတွေနဲ့ မရေးသင့်ပါဘူး။
+Parameter ကြေငြာတဲ့အခါ အဲဒီ parameter အတွက် default value သတ်မှတ်ပေးဖို့ လိုအပ်တဲ့အခါတိုင်း default argument ကြေငြာတဲ့ပုံစံမျိုးနဲ့ဘဲ ရေးသင့်ပါတယ်။ **Ternary conditional** ပုံစံတွေ၊ **short circuiting** ပုံစံတွေနဲ့ မရေးသင့်ပါဘူး။
 
-စာခြွင်း။ ။ short circuiting ဆိုတဲ့ term က တချို့သော developer တွေအတွက် အနည်းငယ် စိမ်းနေနိုင်ပါတယ်။ ဒီ [wiki link](https://en.wikipedia.org/wiki/Short-circuit_evaluation) နဲ့ [stackoverflow link](https://stackoverflow.com/questions/9344305/what-is-short-circuiting-and-how-is-it-used-when-programming-in-java) မှာတော့ ရှင်းထားတာ အတော်လေး ကောင်းပါတယ်။
+စာခြွင်း။ ။ **short circuiting** ဆိုတဲ့ term က တချို့သော developer တွေအတွက် အနည်းငယ် စိမ်းနေနိုင်ပါတယ်။ ဒီ [wiki link](https://en.wikipedia.org/wiki/Short-circuit_evaluation) နဲ့ [stackoverflow link](https://stackoverflow.com/questions/9344305/what-is-short-circuiting-and-how-is-it-used-when-programming-in-java) မှာတော့ ရှင်းထားတာ အတော်လေး ကောင်းပါတယ်။
 
 **မဖြစ်သင့်:**
 
-ဒီရေးသားမှုပုံစံဟာ လိုအပ်ချက်ရှိနေသေးတယ်လို့ ယူဆလို့ ရပါတယ်။ အောက်ပါ function ကိုသာ `$this->createMicrobrewery(null)` နဲ့ call လိုက်ရင် `$breweryName` ဟာ ဖြစ်စေခြင်တဲ့ default value “Hipster Brew Co.” အစား `null value` ဝင်သွားမှာပါ။
+ဒီရေးသားမှုပုံစံဟာ လိုအပ်ချက်ရှိနေသေးတယ်လို့ ယူဆလို့ရပါတယ်။ အောက်ပါ function ကိုသာ `$this->createMicrobrewery(null)` နဲ့ call လိုက်ရင် `$breweryName` ဟာ ဖြစ်စေခြင်တဲ့ default value “Hipster Brew Co.” အစား `null` value ဝင်သွားမှာပါ။
 
-စာခြွင်း။ ။ ကိုယ်ပိုင်အမြင်အရဆိုရင် ဒီရေးသားမှုပုံစံဟာ function ရဲ့ argument control ကို လျှော့ကျသွားတယ် ဆိုရုံလောက်ဘဲ ယူဆလို့ ရတာပါ။ **Php** လို dynamic typing language တစ်ခုမှာ function parameter တစ်ခုကို null value ဝင်တာနဲ့ မကောင်းဘူးပြောဖို့ဆိုတာ အနည်းငယ် တဖက်သက်ဆန်တယ်လို့ ခံစားမိပါတယ်။
+စာခြွင်း။ ။ ကိုယ်ပိုင်အမြင်အရဆိုရင် ဒီရေးသားမှုပုံစံဟာ function ရဲ့ argument control ကို လျှော့ကျသွားတယ် ဆိုရုံလောက်ဘဲ ယူဆလို့ ရတာပါ။ **PHP** လို *dynamic typing language* တစ်ခုမှာ function parameter တစ်ခုကို `null` value ဝင်တာနဲ့ မကောင်းဘူးပြောဖို့ဆိုတာ အနည်းငယ် တဖက်သက်ဆန်တယ်လို့ ခံစားမိပါတယ်။
 
 ```php
 function createMicrobrewery($breweryName = 'Hipster Brew Co.'): void
@@ -408,7 +409,7 @@ function createMicrobrewery($breweryName = 'Hipster Brew Co.'): void
 
 ဒါကြောင့် argument မသတ်မှတ်ဘဲ function call လိုက်သည်ဖြစ်စေ၊ `null` or `empty value` ပေးလိုက်သည်ဖြစ်စေ `$breweryName` parameter ဟာ actual default value “Hipster Brew Co.” ရှိနေတော့မှာပါ။
 
-စာခြွင်း။ ။ ဒီ ရေးသားမှုမှာလည်း မိမိကိုယ်ပိုင်အမြင်အရ ဆိုရင် အရမ်းကြီး သဘောမတူခြင်ပါဘူး။ default argument ဆိုတာ `null value` ကို ရှောင်ခြင်လို့ ရေးရတာမျိုး မဟုတ်ပါဘူး။ function call တဲ့ အချိန်မှာ လိုအပ်တဲ့ parameter အတွက် argument မပေးခဲ့ဘူးဆိုရင် logic အရ default value တစ်ခု သတ်မှတ်ပေးလိုက်တဲ့ သဘောပါ။
+စာခြွင်း။ ။ ဒီ ရေးသားမှုမှာလည်း မိမိကိုယ်ပိုင်အမြင်အရဆိုရင် အရမ်းကြီး သဘောမတူခြင်ပါဘူး။ default argument ဆိုတာ `null` value ကို ရှောင်ခြင်လို့ ရေးရတာမျိုး မဟုတ်ပါဘူး။ function call တဲ့ အချိန်မှာ လိုအပ်တဲ့ parameter အတွက် argument မပေးခဲ့ဘူးဆိုရင် logic အရ default value တစ်ခု သတ်မှတ်ပေးလိုက်တဲ့ သဘောပါ။
 
 ```php
 function createMicrobrewery($name = null): void
@@ -420,9 +421,9 @@ function createMicrobrewery($name = null): void
 
 **ဖြစ်သင့်:**
 
-ဒီ ရေးသားမှုမှာတော့ Php7 ရဲ့ [type hinting](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) feature ကို အသုံးပြုပြီး argument ကို string datatype နဲ့ restrict လုပ်လိုက်ပါတယ်။ ဒါကြောင့် `null value` ဝင်လာခဲ့ရင် `exception` တက်မှာပါ။
+ဒီ ရေးသားမှုမှာတော့ Php7 ရဲ့ [type hinting](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) feature ကို အသုံးပြုပြီး argument ကို **string datatype** နဲ့ restrict လုပ်လိုက်ပါတယ်။ ဒါကြောင့် `null` value ဝင်လာခဲ့ရင် `exception` တက်မှာပါ။
 
-`Null value` ဖြစ်မှာလည်း စိုးရိမ်စရာ မလိုတော့သလို default argument လည်း ကြေငြာပြီးသား ဖြစ်သွားစေတဲ့အတွက် ကောင်းမွန်တဲ့ ရေးသားမှုတစ်ခုလို့ ဆိုလို့ရပါတယ်။
+`null` value ဖြစ်မှာလည်း စိုးရိမ်စရာ မလိုတော့သလို default argument လည်း ကြေငြာပြီးသား ဖြစ်သွားစေတဲ့အတွက် ကောင်းမွန်တဲ့ ရေးသားမှုတစ်ခုလို့ ဆိုလို့ရပါတယ်။
 
 ```php
 function createMicrobrewery(string $breweryName = 'Hipster Brew Co.'): void
@@ -436,10 +437,17 @@ function createMicrobrewery(string $breweryName = 'Hipster Brew Co.'): void
 ## Comparison
 
 ### Use [identical comparison](http://php.net/manual/en/language.operators.comparison.php)
+Php မှာ == (equality) နဲ့ === (identical) ဆိုပြီး comparison operator နှစ်မျိုးရှိတာ developer တိုင်း သိကြမှာပါ။ == (equality) comparison နဲ့ condition စစ်ရင် operands တွေကို type juggling လုပ်ပြီး === (identical) မှာတော့ မလုပ်ပါဘူး။
 
-**Not good:**
+Type juggling rules အသေးစိတ်ကိုတော့ [php official documentation](http://php.net/manual/en/language.operators.comparison.php) မှာ သွားဖတ်လို့ ရပါတယ်။
 
-The simple comparison will convert the string in an integer.
+Type juggling လုပ်တဲ့ rules တွေက အနည်းငယ် ရှုပ်ထွေးပြီး အလွတ်မှတ်ထား နိုင်ဖို့လည်း မလွယ်လှပါဘူး။ ဒါကြောင့် == (equality) operator နဲ့ရေးတဲ့ comparison expression တွေမှာ ကိုယ်မမျှော်လင့်ထားတဲ့ result တွေ ထွက်လာနိုင်ပါတယ်။
+
+ဖြစ်နိုင်ရင်တော့ condition စစ်တိုင်း (===) identical comparison operator ကိုသာ သုံးသင့်ပါတယ်။
+
+**မဖြစ်သင့်:**
+
+အောက်ပါ code block မှာဆိုရင် (==) equality comparison operator က string ကို integer ပြောင်းလိုက်ပါတယ်။
 
 ```php
 $a = '42';
@@ -450,12 +458,11 @@ if ($a != $b) {
 }
 ```
 
-The comparison `$a != $b` returns `FALSE` but in fact it's `TRUE`!
-The string `42` is different than the integer `42`.
+*string* `42` နဲ့ *integer* `42` ဟာ computational logic အရ ဆိုရင် မတူပါဘူး။ ဒါပေမယ့် `$a != $b` လို့ comparison လုပ်လိုက်ရင်တော့ `FALSE` return ပြန်လာတာကို တွေ့ရမှာပါ။
 
-**Good:**
+**ဖြစ်သင့်:**
 
-The identical comparison will compare type and value.
+(===) identical operator ကတော့ operand တွေရဲ့ datatype မတူရင် value comparison ကို မလုပ်ဆောင်တော့ပါဘူး။
 
 ```php
 $a = '42';
@@ -466,7 +473,7 @@ if ($a !== $b) {
 }
 ```
 
-The comparison `$a !== $b` returns `TRUE`.
+အထက်ပါ code block မှာတော့ မျှော်လင့်ထားတဲ့အတိုင်း `TRUE` ကို ရရှိမှာဘဲ ဖြစ်ပါတယ်။
 
 **[⬆ back to top](#မာတိကာ)**
 
