@@ -82,7 +82,7 @@ $ymdstr = $moment->format('y-m-d');
 $currentDate = $moment->format('y-m-d');
 ```
 
-**[⬆ back to top](#မာတိကာ)**
+**[⬆ back to top](#introduction)**
 
 ### Use the same vocabulary for the same type of variable
 
@@ -437,7 +437,7 @@ function createMicrobrewery(string $breweryName = 'Hipster Brew Co.'): void
 ## Comparison
 
 ### Use [identical comparison](http://php.net/manual/en/language.operators.comparison.php)
-Php မှာ == (equality) နဲ့ === (identical) ဆိုပြီး comparison operator နှစ်မျိုးရှိတာ developer တိုင်း သိကြမှာပါ။ == (equality) comparison နဲ့ condition စစ်ရင် operands တွေကို type juggling လုပ်ပြီး === (identical) မှာတော့ မလုပ်ပါဘူး။
+Php မှာ == (equality) နဲ့ === (identical) ဆိုပြီး comparison operator နှစ်မျိုးရှိတာ developer တိုင်း သိကြမှာပါ။ Php မှာ == (equality) နဲ့ === (identical) ဆိုပြီး comparison operator နှစ်မျိုးရှိတာ developer တိုင်း သိကြမှာပါ။ == (equality) comparison နဲ့ condition စစ်ရင် operands တွေကို type juggling လုပ်လိုက်ပါတယ်။ === (identical) comparison မှာတော့ type juggling မလုပ်ပါဘူး။
 
 Type juggling rules အသေးစိတ်ကိုတော့ [php official documentation](http://php.net/manual/en/language.operators.comparison.php) မှာ သွားဖတ်လို့ ရပါတယ်။
 
@@ -459,6 +459,8 @@ if ($a != $b) {
 ```
 
 *string* `42` နဲ့ *integer* `42` ဟာ computational logic အရ ဆိုရင် မတူပါဘူး။ ဒါပေမယ့် `$a != $b` လို့ comparison လုပ်လိုက်ရင်တော့ `FALSE` return ပြန်လာတာကို တွေ့ရမှာပါ။
+
+ဘာဖြစ်လို့လဲဆိုရင် သူတို့နှစ်ခုကို (==) equality operator က type juggling လုပ်လိုက်တဲ့အတွက် *string* `42` က *integer* ဖြစ်သွားပါတယ်။ ဒါကြောင့် သူတို့နှစ်ခုကို comparison လုပ်တဲ့အခါ တူတယ်ဆိုတဲ့အဖြေဆိုတဲ့ ထွက်လာစေတာပါ။
 
 **ဖြစ်သင့်:**
 
@@ -482,16 +484,14 @@ if ($a !== $b) {
 
 ### Function arguments (2 or fewer ideally)
 
-Limiting the amount of function parameters is incredibly important because it makes 
-testing your function easier. Having more than three leads to a combinatorial explosion 
-where you have to test tons of different cases with each separate argument.
+Function parameters အရေအတွက်ကို ကန့်သတ်ထားဖို့က အရမ်း အရေးကြီးပါတယ်။ Function parameters နည်းတဲ့အခါ အဲဒီ function အတွက် testing ရေးရတာ ပိုလွယ်ကူတာကို တွေ့ရမှာပါ။
+Parameters ၃ ခုထက် ကျော်သွားရင် parameter တစ်ခုခြင်းစီအတွက် မတူတဲ့ value တစ်ခုခြင်းစီနဲ့ Test case တွေ လိုက်ရေးပေးနေရတဲ့အတွက် Test case တွေ အများကြီး ဖောင်းပွသွားနိုင်တာကို သတိချပ်သင့်ပါတယ်။
 
-Zero arguments is the ideal case. One or two arguments is ok, and three should be avoided. 
-Anything more than that should be consolidated. Usually, if you have more than two 
-arguments then your function is trying to do too much. In cases where it's not, most 
-of the time a higher-level object will suffice as an argument.
+Zero argument (argument တစ်ခုမှ မလိုတဲ့ function) က အကောင်းဆုံးပါ။ Argument ၁ ခု (သို့) ၂ ခု လောက်ထိ အဆင်ပြေပါတယ်။ ၃ ခု ဆိုရင်တော့ စတင် သတိထားပြီး ရှောင်ရှားသင့်ပါပြီ။ အဲဒါထက် ပိုများသွားပြီဆိုရင်တော့ function ကို ပြန်ပြင်ရေးသင့်နေပါပြီ။ Argument ၂ ခုထက် ပိုနေတာဟာ အဲဒီ function က အလုပ်တစ်ခုထက်မက လုပ်နေပြီလို့ ယူဆလို့ ရပါတယ်။ အကယ်၍ ၃ ခုထက် ပိုတဲ့ argument တွေက context တစ်ခုတည်းအောက်မှာ ရှိနေတဲ့အခါမျိုးမှာတော့ object တစ်ခု အစားတည်ဆောက်ပြီး pass ပေးသင့်ပါတယ်။
 
-**Bad:**
+အောက်ပါ ဥပမာကို လေ့လာကြည့်လို့ ရပါတယ်။ Menu တစ်ခု တည်ဆောက်ဖို့ parameter ၄ ခု pass ပေးမယ့်အစား MenuConfig ဆိုတဲ့ object တစ်ခု တည်ဆောက်ပြီး createMenu function ကို pass ပေးလိုက်တာ တွေ့ရမှာပါ။
+
+**မဖြစ်သင့်:**
 
 ```php
 function createMenu(string $title, string $body, string $buttonText, bool $cancellable): void
@@ -500,7 +500,7 @@ function createMenu(string $title, string $body, string $buttonText, bool $cance
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 class MenuConfig
@@ -527,11 +527,13 @@ function createMenu(MenuConfig $config): void
 
 ### Functions should do one thing
 
-This is by far the most important rule in software engineering. When functions do more 
-than one thing, they are harder to compose, test, and reason about. When you can isolate 
-a function to just one action, they can be refactored easily and your code will read much 
-cleaner. If you take nothing else away from this guide other than this, you'll be ahead 
-of many developers.
+ဒါကတော့ software engineering မှာ လိုက်နာသင့်တဲ့ အရေးကြီးဆုံး စည်းကမ်း တစ်ခုပါဘဲ။ အလုပ်တစ်ခုထက်ပိုတဲ့ Functions တွေ ရေးမိတဲ့အခါ program ကို အစဉ်တကျဆက်ရေးဖို့ ခက်သွားစေပါတယ်။ ဒုတိယအချက်အနေနဲ့ test case တွေ ရေးရတာလည်း မလွယ်တော့ပါဘူး။ Function က အလုပ်တစ်ခုထက် ပိုလုပ်တဲ့အတွက် အဲဒါကို cover ဖြစ်ဖို့ function အတွက် test cases တွေ အများကြီး လိုက်ရေးရတော့တာပါဘဲ။ တတိယအချက်ကတော့ reason to change တစ်ခုထက် ပိုသွားတာပါဘဲ။ Function တစ်ခုဟာ program ထဲမှာ သူတည်ရှိနေရခြင်း ရည်ရွယ်ချက် တစ်ခုဘဲ ရှိသင့်ပါတယ်။ အဲ့ဒါကို reason to change လို့ ခေါ်ကြပါတယ်။
+
+Function တွေကို လုပ်ဆောင်ချက် တစ်ခုတည်းကိုသာလုပ်ဖို့ ကန့်သတ်ရေးသားနိုင်မယ်ဆိုရင် refactor လုပ်ရလွယ်သလို code တွေကလည်း အတော်လေး ရှင်းလင်းသွားပါလိမ့်မယ်။ အကယ်လို့ ဒီ guide ထဲက တခြားလမ်းညွှန်ချက်တွေကို မေ့ခြင်မေ့၊ ဒီတစ်ချက်ကိုတော့ သေချာပေါက် မှတ်ထားဖို့ လိုပါတယ်။ ဒီ တစ်ချက်ကို လိုက်နာနိုင်ယုံနဲ့တင် ပုံမှန် developers တွေရေးတဲ့ code ထက် အများကြီးသာတဲ့ clean code ကို ရေးနိုင်သွားမှာပါ။
+
+စကားချပ်။ ။ ဒီမှာ တစ်ခုရှိနိုင်တာက လုပ်ဆောင်ချက်တစ်ခုတည်းလုပ်တယ်ဆိုတာ ဘာကို ပြောတာလဲဆိုပြီး မေးခွန်းထုတ်နိုင်ပါတယ်။ Function body ထဲမှာ ရှိတဲ့ code တွေ အားလုံးဟာ abstraction level တစ်ခုတည်းအောက်မှာ ရှိနေပြီး final output result တစ်ခုတည်းရှိနေခြင်းကို ဆိုလိုပါတယ်။
+
+ဥပမာ - harddisk ပေါ်မှာ file သိမ်းတဲ့ function တစ်ခုကိုရေးမယ်ဆိုရင် code line တွေ အများကြီး ပါဝင်နိုင်ပေမယ့် သူတို့အားလုံးရဲ့ ရည်ရွယ်ချက်ကတော့ နောက်ဆုံးမှာ file သိမ်းသွားဖို့ပါဘဲ။ cloud ပေါ်မှာ file သိမ်းတဲ့ လုပ်ဆောင်ချက်ကိုပါ ထည့်ရေးလိုက်ရင် ဒါလုပ်ဆောင်ချက်တစ်ခုထက်ပိုတဲ့ function တစ်ခု ဖြစ်သွားပါလိမ့်မယ်။ 
 
 **Bad:**
 ```php
