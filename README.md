@@ -535,7 +535,7 @@ Function တွေကို လုပ်ဆောင်ချက် တစ်ခ
 
 ဥပမာ - harddisk ပေါ်မှာ file သိမ်းတဲ့ function တစ်ခုကိုရေးမယ်ဆိုရင် code line တွေ အများကြီး ပါဝင်နိုင်ပေမယ့် သူတို့အားလုံးရဲ့ ရည်ရွယ်ချက်ကတော့ နောက်ဆုံးမှာ file သိမ်းသွားဖို့ပါဘဲ။ cloud ပေါ်မှာ file သိမ်းတဲ့ လုပ်ဆောင်ချက်ကိုပါ ထည့်ရေးလိုက်ရင် ဒါလုပ်ဆောင်ချက်တစ်ခုထက်ပိုတဲ့ function တစ်ခု ဖြစ်သွားပါလိမ့်မယ်။ 
 
-**Bad:**
+**မဖြစ်သင့်:**
 ```php
 function emailClients(array $clients): void
 {
@@ -548,7 +548,7 @@ function emailClients(array $clients): void
 }
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 function emailClients(array $clients): void
