@@ -47,9 +47,9 @@
   8. [Don’t repeat yourself (DRY)](#dont-repeat-yourself-dry)
   9. [Translations](#translations)
 
-## နိဒါန်း
+## Introduction
 
-Robert C. Martin ရဲ့ လက်ရာမြှောက် [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) စာအုပ်ထဲက Software engineering principles တွေကို PHP Language အတွက် သီးသန့် (ဆီလျှော်အောင်) ပြန်လည်မွမ်းမံ စုစည်းပေးထားတာ ဖြစ်ပါတယ်။ ဒါက Coding Style Guideline တစ်ခု မဟုတ်ပါဘူး။ PHP program တွေရေးတဲ့အခါ
+ဒီစာအုပ်လေးက Robert C. Martin ရဲ့ လက်ရာမြှောက် [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) စာအုပ်ထဲက Software engineering principles တွေကို PHP Language အတွက် သီးသန့် (ဆီလျှော်အောင်) ပြန်လည်မွမ်းမံ စုစည်းပေးထားတာ ဖြစ်ပါတယ်။ ဒါက Coding Style Guideline တစ်ခုတော့ မဟုတ်ပါဘူး။ PHP program တွေရေးတဲ့အခါ
 
 - Code တွေ ရှင်းရှင်းလင်းလင်းဖြစ်အောင် (ဝါ) readable ဖြစ်အောင် ၊ 
 - Code အစိတ်အပိုင်းများကို တခါရေးပြီးနောက် အခြားနေရာများတွင်လည်း ပြန်လည်အသုံးချနိုင်အောင် (ဝါ) reusable ဖြစ်အောင်၊
@@ -57,12 +57,12 @@ Robert C. Martin ရဲ့ လက်ရာမြှောက် [*Clean Code*](h
 
 ရေးသားနိုင်ဖို့ အကူအညီပေးမယ့် လမ်းညွှန်ချက်တစ်ခုဆိုရင် ပိုမှန်ပါလိမ့်မယ်။
 
-ဒီမှာဖော်ပြထားတဲ့ Software ရေးသားနည်း ဥပဒေသတွေကို တသွေမတိမ်း လိုက်နာဖို့တော့ မလိုအပ်ပါဘူး။ တကယ်ဆိုရင် တချို့သော ဥပဒေသတွေကိုသာ နေရာတိုင်းမှာ မှန်တယ်လို့ လက်ခံထားကြတာပါ။ အများစုက သူ့နေရာနဲ့သူ မှန်ကန်အောင် အသုံးချတတ်မှသာ အသုံးဝင်မှာပါ။
+ဒီမှာဖော်ပြထားတဲ့ Software ရေးသားနည်း ဥပဒေသတွေကို တသွေမတိမ်း လိုက်နာဖို့တော့ မလိုအပ်ပါဘူး။ တချို့သော ဥပဒေသတွေကိုသာ နေရာတိုင်းမှာ မှန်တယ်လို့ လက်ခံထားကြတာပါ။ အများစုက သူ့နေရာနဲ့သူ မှန်ကန်အောင် အသုံးချတတ်မှသာ အသုံးဝင်မှာပါ။
 ဒီ ဥပဒေသတွေက လမ်းညွှန်တစ်ခုထက် မပိုပါဘူး။ ဒါပေမယ့် ဒီလမ်းညွှန်ချက်တွေက နှစ်ပေါင်းများစွာ code တွေရေးရင်း ရလာတဲ့ အတွေအကြုံတွေကို Clean Code ရဲ့ မူရင်းရေးသားသူက ကြိုးစားပြီး စုစည်းပေးထားတာပါ။
 
 Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript).
 
-အခုလက်ရှိ PHP developers တော်တော်များများက PHP 5 ကို သုံးနေဆဲဖြစ်ပေမယ့်၊ Code example တော်တော်များများကိုတော့ PHP 7.1+ သာ စမ်းကြည့်လို့ ရမှာဖြစ်ပါတယ်။
+အခုလက်ရှိ PHP developers တော်တော်များများက PHP 5 ကို သုံးနေဆဲဖြစ်ပေမယ့်၊ Code example တော်တော်များများကိုတော့ PHP 7.1+ ကိုသာ အသုံးပြုရေးသားဖြစ်သွားပါတယ်။
 
 ## Variables
 
@@ -527,13 +527,13 @@ function createMenu(MenuConfig $config): void
 
 ### Functions should do one thing
 
-ဒါကတော့ software engineering မှာ လိုက်နာသင့်တဲ့ အရေးကြီးဆုံး စည်းကမ်း တစ်ခုပါဘဲ။ အလုပ်တစ်ခုထက်ပိုတဲ့ Functions တွေ ရေးမိတဲ့အခါ program ကို အစဉ်တကျဆက်ရေးဖို့ ခက်သွားစေပါတယ်။ ဒုတိယအချက်အနေနဲ့ test case တွေ ရေးရတာလည်း မလွယ်တော့ပါဘူး။ Function က အလုပ်တစ်ခုထက် ပိုလုပ်တဲ့အတွက် အဲဒါကို cover ဖြစ်ဖို့ function အတွက် test cases တွေ အများကြီး လိုက်ရေးရတော့တာပါဘဲ။ တတိယအချက်ကတော့ reason to change တစ်ခုထက် ပိုသွားတာပါဘဲ။ Function တစ်ခုဟာ program ထဲမှာ သူတည်ရှိနေရခြင်း ရည်ရွယ်ချက် တစ်ခုဘဲ ရှိသင့်ပါတယ်။ အဲ့ဒါကို reason to change လို့ ခေါ်ကြပါတယ်။
+ဒါကတော့ software engineering မှာ လိုက်နာသင့်တဲ့ အရေးကြီးဆုံး စည်းကမ်း တစ်ခုပါဘဲ။ အလုပ်တစ်ခုထက်ပိုတဲ့ Functions တွေ ရေးမိတဲ့အခါ program ကို အစဉ်တကျဆက်ရေးဖို့ ခက်သွားစေပါတယ်။ ဒုတိယအချက်အနေနဲ့ test case တွေ ရေးရတာလည်း မလွယ်တော့ပါဘူး။ Function က အလုပ်တစ်ခုထက် ပိုလုပ်တဲ့အတွက် အဲဒါကို cover ဖြစ်ဖို့အတွက် test cases တွေ အများကြီး လိုက်ရေးရတော့တာပါဘဲ။ တတိယအချက်ကတော့ reason to change တစ်ခုထက် ပိုသွားတာပါဘဲ။ Function တစ်ခုဟာ program ထဲမှာ သူဘာကြောင့်တည်ရှိနေသင့်လဲဆိုတဲ့ ရည်ရွယ်ချက် တစ်ခုဘဲ ရှိသင့်ပါတယ်။ အဲ့ဒါကို reason to change လို့ ခေါ်ကြတာပါ။
 
-Function တွေကို လုပ်ဆောင်ချက် တစ်ခုတည်းကိုသာလုပ်ဖို့ ကန့်သတ်ရေးသားနိုင်မယ်ဆိုရင် refactor လုပ်ရလွယ်သလို code တွေကလည်း အတော်လေး ရှင်းလင်းသွားပါလိမ့်မယ်။ အကယ်လို့ ဒီ guide ထဲက တခြားလမ်းညွှန်ချက်တွေကို မေ့ခြင်မေ့၊ ဒီတစ်ချက်ကိုတော့ သေချာပေါက် မှတ်ထားဖို့ လိုပါတယ်။ ဒီ တစ်ချက်ကို လိုက်နာနိုင်ယုံနဲ့တင် ပုံမှန် developers တွေရေးတဲ့ code ထက် အများကြီးသာတဲ့ clean code ကို ရေးနိုင်သွားမှာပါ။
+Function တွေကို လုပ်ဆောင်ချက် တစ်ခုတည်းသာလုပ်ဖို့ ကန့်သတ်ရေးသားနိုင်မယ်ဆိုရင် refactor လုပ်ရလွယ်သလို code တွေကလည်း အတော်လေး ရှင်းလင်းသွားပါလိမ့်မယ်။ အကယ်လို့ ဒီ guide ထဲက တခြားလမ်းညွှန်ချက်တွေကို မေ့ခြင်မေ့သွားပါစေ၊ ဒီတစ်ချက်ကိုတော့ သေချာပေါက် မှတ်ထားဖို့ လိုပါတယ်။ ဒီ တစ်ချက်ကို လိုက်နာနိုင်ယုံနဲ့တင် ပုံမှန် developers တွေရေးတဲ့ code ထက် အများကြီးသာတဲ့ clean code ကို ရေးနိုင်သွားမှာပါ။
 
 စကားချပ်။ ။ ဒီမှာ တစ်ခုရှိနိုင်တာက လုပ်ဆောင်ချက်တစ်ခုတည်းလုပ်တယ်ဆိုတာ ဘာကို ပြောတာလဲဆိုပြီး မေးခွန်းထုတ်နိုင်ပါတယ်။ Function body ထဲမှာ ရှိတဲ့ code တွေ အားလုံးဟာ abstraction level တစ်ခုတည်းအောက်မှာ ရှိနေပြီး final output result တစ်ခုတည်းရှိနေခြင်းကို ဆိုလိုပါတယ်။
 
-ဥပမာ - harddisk ပေါ်မှာ file သိမ်းတဲ့ function တစ်ခုကိုရေးမယ်ဆိုရင် code line တွေ အများကြီး ပါဝင်နိုင်ပေမယ့် သူတို့အားလုံးရဲ့ ရည်ရွယ်ချက်ကတော့ နောက်ဆုံးမှာ file သိမ်းသွားဖို့ပါဘဲ။ cloud ပေါ်မှာ file သိမ်းတဲ့ လုပ်ဆောင်ချက်ကိုပါ ထည့်ရေးလိုက်ရင် ဒါလုပ်ဆောင်ချက်တစ်ခုထက်ပိုတဲ့ function တစ်ခု ဖြစ်သွားပါလိမ့်မယ်။ 
+ဥပမာ - hard disk ပေါ်မှာ file သိမ်းတဲ့ function တစ်ခုကိုရေးမယ်ဆိုရင် code line တွေ အများကြီး ပါဝင်နိုင်ပေမယ့် သူတို့အားလုံးရဲ့ ရည်ရွယ်ချက်ကတော့ နောက်ဆုံးမှာ file သိမ်းသွားဖို့ပါဘဲ။ cloud ပေါ်မှာ file သိမ်းတဲ့ လုပ်ဆောင်ချက်ကိုပါ ထည့်ရေးလိုက်ရင် ဒါလုပ်ဆောင်ချက်တစ်ခုထက်ပိုတဲ့ function တစ်ခု ဖြစ်သွားပါလိမ့်မယ်။ 
 
 **မဖြစ်သင့်:**
 ```php
@@ -574,7 +574,10 @@ function isClientActive(int $client): bool
 
 ### Function names should say what they do
 
-**Bad:**
+Programmer တွေဟာ ဗေဒင်ဆရာမဟုတ်ပေမယ့် နာမည်ပေးတဲ့အလုပ်ကိုတော့ နိစ္စဓူဝ ပျော်ပျော်ကြီး လုပ်နေကြရပါတယ်။ ဒီနေရာမှာလည်း Function တွေကို နာမည်ပေးတဲ့အခါ သူရဲ့လုပ်ဆောင်ချက်ကို ပေါ်လွင်စေတဲ့ အမည်မျိုးကို ရွေးချယ်ပေးသင့်ပါတယ်။ နာမည်ကောင်းတစ်ခု ရွေးချယ်သတ်မှတ်ရတာဟာ လွယ်တဲ့အလုပ်တစ်ခုတော့ မဟုတ်ပါဘူး။
+အချိန်ပေးပြီး စဉ်းစားရပါတယ်။ ဒါပေမယ့် ရေရည်မှာ ကိုယ့် program ရဲ့ maintainability ကို အများကြီး အထောက်အကူကောင်း ဖြစ်စေမှာပါ။
+
+**မဖြစ်သင့်:**
 
 ```php
 class Email
@@ -592,7 +595,7 @@ $message = new Email(...);
 $message->handle();
 ```
 
-**Good:**
+**ဖြစ်သင့်:**
 
 ```php
 class Email 
@@ -752,19 +755,24 @@ class BetterJSAlternative
 
 ### Don't use flags as function parameters
 
-Flags tell your user that this function does more than one thing. Functions should 
-do one thing. Split out your functions if they are following different code paths 
-based on a boolean.
+Flag Argument တွေကို function ရေးတဲ့နေရာမှာ သုံးတာကလည်း ဆိုးရွားတဲ့ ရေးသားပုံတစ်ခုပါဘဲ။
+Flag Argument ဆိုတာ function ခေါ်တဲ့အခါ boolean value လက်ခံတယ်။ အဲဒီ boolean value ပေါ်မှာ မူတည်ပြီး function ထဲမှာ လုပ်ဆောင်ချက်တစ်ခုထက်မက ရေးသားထားတဲ့ ပုံစံကို ပြောတာပါ။
+
+အောက်က code example ကို ကြည့်လို့ ရပါတယ်။ Concert booking လုပ်တဲ့ function မှာ isPremium ဆိုတဲ့ boolean argument တစ်ခုကို လက်ခံတယ်။ isPremium က true ဖြစ်ခဲ့ရင် premium booking ကိုလုပ်ပြီး false ဆိုရင် regular booking ကို လုပ်ဆောင်ဖို့ ရေးထားပါတယ်။ မကောင်းတဲ့အချက်တွေက -
+၁) function က premium booking နဲ့ regular booking ဆိုပြီး အလုပ်တစ်ခုထက် ပိုလုပ်ဖို့ ရေးထားတယ်၊
+၂) function ကို ခေါ်တဲ့နေရာမှာလည်း order->book(customer, true) ဆိုတဲ့ statement ဟာဆိုရင် function declaration ကိုသွားမကြည့်ဘဲ boolean value က ဘာကိုကိုယ်စားပြုလဲဆိုတာ သိဖို့မလွယ်ကူဘူး။
+
+ဒါကြောင့် ဒီလို flag နဲ့ ရေးမယ့်အစား function နှစ်ခုခွဲပြီး ရေးသားသင့်ပါတယ်။
 
 **Bad:**
 
 ```php
-function createFile(string $name, bool $temp = false): void
+function concertBooking(Customer $customer, bool $isPremium = false): void
 {
-    if ($temp) {
-        touch('./temp/'.$name);
+    if ($isPremium) {
+        // premium booking logic
     } else {
-        touch($name);
+        // regular booking logic
     }
 }
 ```
@@ -772,16 +780,41 @@ function createFile(string $name, bool $temp = false): void
 **Good:**
 
 ```php
-function createFile(string $name): void
+function regularBooking(Customer $customer): void
 {
-    touch($name);
+    // regular booking logic
 }
 
-function createTempFile(string $name): void
+function premiumBooking(Customer $customer): void
 {
-    touch('./temp/'.$name);
+    // premium booking logic
 }
 ```
+
+စာခြွင်း။ ။
+
+တခါတလေ function နှစ်ခုခွဲရေးလိုက်လို့ ဘုံတူနေတဲ့ code တွေ duplicate ဖြစ်ကုန်တဲ့ အခါမျိုးတွေလည်း ကြုံကောင်းကြုံရနိုင်ပါတယ်။ ဥပမာ - အထက်က booking case မျိုးမှာဆိုရင် booking အတွက် ထိုင်ခုံလွတ်ကျန်သေးလားစစ်တဲ့ code ကို function ခွဲရေးလိုက်တဲ့အတွက် premiumBooking မှာရော၊ regularBooking မှာပါ နှစ်ခါလိုက်ရေးရတဲ့ အခြေအနေမျိုး ဖြစ်လာနိုင်ပါတယ်။
+
+အကယ်လို့ duplication ပမာဏက အရမ်းများသွားတဲ့ အခြေအနေမျိုးမှာဆိုရင် flag argument နဲ့ method ကို နှစ်ခုမခွဲဘဲ ဒီအတိုင်း ထားလိုက်လို့ရပါတယ်။ ဒါပေမယ့် private scope နဲ့ hidden လုပ်လိုက်ပါ။
+ပြီးမှ သူကိုယူသုံးလို့ရအောင် public method နှစ်ခုပြန်ခွဲရေးပေးလိုက်လို့ ရပါတယ်။ မြင်သာအောင် အောက်က ဥပမာလေးနဲ့ တွဲကြည့်ပေးပါ။
+
+```php
+function regularBooking(Customer $customer): void
+{
+    return $this->hiddenBookingImpl($customer);
+}
+
+function premiumBooking(Customer $customer): void
+{
+    return $this->hiddenBookingImpl($customer, true);
+}
+
+private function hiddenBookingImpl(Customer $customer, bool $isPremium = false) : void
+{
+    ...
+}
+```
+ဒီအတိုင်းဆိုရင် code လည်း duplicate မဖြစ်တော့ဘူး။ client class တွေထဲမှာလည်း readable code တွေ ရေးလို့ရသွားပါပြီ။
 
 **[⬆ back to top](#မာတိကာ)**
 
