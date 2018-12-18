@@ -820,19 +820,9 @@ private function hiddenBookingImpl(Customer $customer, bool $isPremium = false) 
 
 ### Avoid Side Effects
 
-A function produces a side effect if it does anything other than take a value in and 
-return another value or values. A side effect could be writing to a file, modifying 
-some global variable, or accidentally wiring all your money to a stranger.
+Side Effect ဆိုတာ function ရဲ့ scope အပြင်ဘက်က state တစ်ခုခုကို ပြောင်းလဲလိုက်တာကို ပြောတာပါ။ ဥပမာ - file တစ်ခုကို data သွား write တာ၊ global variable တွေထဲမှာ သိမ်းထားတဲ့ data တွေကို ပြောင်းပစ်လိုက်တာ၊ class ထဲက member variable တွေကို ပြင်လိုက်တာ၊ database ထဲမှာ data သွားထည့်တာ၊ ပြင်တာ၊ဖျက်တာ အစရှိတဲ့ လုပ်ဆောင်ချက်တွေက side effect တွေပေါ့။
 
-Now, you do need to have side effects in a program on occasion. Like the previous 
-example, you might need to write to a file. What you want to do is to centralize where 
-you are doing this. Don't have several functions and classes that write to a particular 
-file. Have one service that does it. One and only one.
-
-The main point is to avoid common pitfalls like sharing state between objects without
-any structure, using mutable data types that can be written to by anything, and not 
-centralizing where your side effects occur. If you can do this, you will be happier 
-than the vast majority of other programmers.
+အကြမ်းဖျင်းအားဖြင့် Function ဆိုတဲ့ သဘောတရားက input argument လက်ခံတယ်။ အဲဒီ argument ပေါ် အခြေခံပြီး process လုပ်စရာရှိ လုပ်တယ်။ ပြီးတော့ ouptut တစ်ခု ပြန်ထုတ်ပေးတယ်။ အဲဒါထက် ကျော်လွန်ပြီး side effect ပါလာရင် မကောင်းဘူးလို့ ယူဆကြပါတယ်။
 
 **Bad:**
 
