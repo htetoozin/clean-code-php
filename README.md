@@ -756,11 +756,11 @@ class BetterJSAlternative
 ### Don't use flags as function parameters
 
 Flag Argument တွေကို function ရေးတဲ့နေရာမှာ သုံးတာကလည်း ဆိုးရွားတဲ့ ရေးသားပုံတစ်ခုပါဘဲ။
-Flag Argument ဆိုတာ function ခေါ်တဲ့အခါ boolean value လက်ခံတယ်။ အဲဒီ boolean value ပေါ်မှာ မူတည်ပြီး function ထဲမှာ လုပ်ဆောင်ချက်တစ်ခုထက်မက ရေးသားထားတဲ့ ပုံစံကို ပြောတာပါ။
+Flag Argument ဆိုတာ function ခေါ်တဲ့အခါ boolean value တစ်ခုကို parameter အနေနဲ့ လက်ခံတယ်။ အဲဒီ boolean value ပေါ်မှာ မူတည်ပြီး function ထဲမှာ လုပ်ဆောင်ချက်တွေပြောင်းလဲ လုပ်ဆောင်ဖို့ ရေးသားထားတဲ့ ပုံစံကို ပြောတာပါ။
 
 အောက်က code example ကို ကြည့်လို့ ရပါတယ်။ Concert booking လုပ်တဲ့ function မှာ isPremium ဆိုတဲ့ boolean argument တစ်ခုကို လက်ခံတယ်။ isPremium က true ဖြစ်ခဲ့ရင် premium booking ကိုလုပ်ပြီး false ဆိုရင် regular booking ကို လုပ်ဆောင်ဖို့ ရေးထားပါတယ်။ မကောင်းတဲ့အချက်တွေက -
 ၁) function က premium booking နဲ့ regular booking ဆိုပြီး အလုပ်တစ်ခုထက် ပိုလုပ်ဖို့ ရေးထားတယ်၊
-၂) function ကို ခေါ်တဲ့နေရာမှာလည်း order->book(customer, true) ဆိုတဲ့ statement ဟာဆိုရင် function declaration ကိုသွားမကြည့်ဘဲ boolean value က ဘာကိုကိုယ်စားပြုလဲဆိုတာ သိဖို့မလွယ်ကူဘူး။
+၂) function ကို ခေါ်တဲ့နေရာမှာလည်း order->book(customer, true) ဆိုတဲ့ statement ဟာဆိုရင် function declaration ကိုသွားမကြည့်ဘဲ boolean parameter က ဘာကိုကိုယ်စားပြုလဲဆိုတာ သိဖို့မလွယ်ကူဘူး။
 
 ဒါကြောင့် ဒီလို flag နဲ့ ရေးမယ့်အစား function နှစ်ခုခွဲပြီး ရေးသားသင့်ပါတယ်။
 
@@ -793,9 +793,9 @@ function premiumBooking(Customer $customer): void
 
 စာခြွင်း။ ။
 
-တခါတလေ function နှစ်ခုခွဲရေးလိုက်လို့ ဘုံတူနေတဲ့ code တွေ duplicate ဖြစ်ကုန်တဲ့ အခါမျိုးတွေလည်း ကြုံကောင်းကြုံရနိုင်ပါတယ်။ ဥပမာ - အထက်က booking case မျိုးမှာဆိုရင် booking အတွက် ထိုင်ခုံလွတ်ကျန်သေးလားစစ်တဲ့ code ကို function ခွဲရေးလိုက်တဲ့အတွက် premiumBooking မှာရော၊ regularBooking မှာပါ နှစ်ခါလိုက်ရေးရတဲ့ အခြေအနေမျိုး ဖြစ်လာနိုင်ပါတယ်။
+တခါတလေ function နှစ်ခုခွဲရေးလိုက်လို့ ဘုံတူနေတဲ့ code တွေ duplicate ဖြစ်ကုန်တဲ့ အခါမျိုးတွေလည်း ကြုံကောင်းကြုံရနိုင်ပါတယ်။ ဥပမာ - အထက်က booking case မျိုးမှာဆိုရင် booking အတွက် ထိုင်ခုံလွတ်ကျန်သေးလားစစ်တဲ့ code ကို premiumBooking မှာရော၊ regularBooking မှာပါ နှစ်ခါလိုက်ရေးရတဲ့ အခြေအနေမျိုး ဖြစ်လာနိုင်ပါတယ်။
 
-အကယ်လို့ duplication ပမာဏက အရမ်းများသွားတဲ့ အခြေအနေမျိုးမှာဆိုရင် flag argument နဲ့ method ကို နှစ်ခုမခွဲဘဲ ဒီအတိုင်း ထားလိုက်လို့ရပါတယ်။ ဒါပေမယ့် private scope နဲ့ hidden လုပ်လိုက်ပါ။
+အကယ်လို့ duplication ပမာဏက အရမ်းများသွားတဲ့ အခြေအနေမျိုးမှာဆိုရင် method ကို နှစ်ခုမခွဲဘဲ ဒီအတိုင်း ထားလိုက်လို့ရပါတယ်။ ဒါပေမယ့် private scope နဲ့ hidden လုပ်လိုက်ပါ။
 ပြီးမှ သူကိုယူသုံးလို့ရအောင် public method နှစ်ခုပြန်ခွဲရေးပေးလိုက်လို့ ရပါတယ်။ မြင်သာအောင် အောက်က ဥပမာလေးနဲ့ တွဲကြည့်ပေးပါ။
 
 ```php
@@ -820,9 +820,16 @@ private function hiddenBookingImpl(Customer $customer, bool $isPremium = false) 
 
 ### Avoid Side Effects
 
-Side Effect ဆိုတာ function ရဲ့ scope အပြင်ဘက်က state တစ်ခုခုကို ပြောင်းလဲလိုက်တာကို ပြောတာပါ။ ဥပမာ - file တစ်ခုကို data သွား write တာ၊ global variable တွေထဲမှာ သိမ်းထားတဲ့ data တွေကို ပြောင်းပစ်လိုက်တာ၊ class ထဲက member variable တွေကို ပြင်လိုက်တာ၊ database ထဲမှာ data သွားထည့်တာ၊ ပြင်တာ၊ဖျက်တာ အစရှိတဲ့ လုပ်ဆောင်ချက်တွေက side effect တွေပေါ့။
+Side Effect ဆိုတာ function ရဲ့ scope အပြင်ဘက်က state တစ်ခုခုကို (မမျှော်လင့်ထားတဲ့) ပြောင်းလဲမှုတွေ လုပ်လိုက်တာကို ပြောတာပါ။ ဥပမာ - file တစ်ခုကို data သွား write တာ၊ global variable, member variable တွေထဲမှာ သိမ်းထားတဲ့ data တွေကို ပြောင်းပစ်လိုက်တာ၊ database ထဲမှာ data သွားထည့်တာ၊ ပြင်တာ၊ဖျက်တာ အစရှိတဲ့ လုပ်ဆောင်ချက်တွေက side effect တွေပေါ့။
 
-အကြမ်းဖျင်းအားဖြင့် Function ဆိုတဲ့ သဘောတရားက input argument လက်ခံတယ်။ အဲဒီ argument ပေါ် အခြေခံပြီး process လုပ်စရာရှိ လုပ်တယ်။ ပြီးတော့ ouptut တစ်ခု ပြန်ထုတ်ပေးတယ်။ အဲဒါထက် ကျော်လွန်ပြီး side effect ပါလာရင် မကောင်းဘူးလို့ ယူဆကြပါတယ်။
+စာခြွင်း။ ။
+ဒီနေရာမှာ တစ်ခုသတိထားရမှာက Functional Programming နဲ့ Object Oriented Programming ပေါ်မှာ မူတည်ပြီး function နဲ့ side effect အပေါ်ယူဆချက်တွေက ကွဲပြားပါသေးတယ်။ ကိုယ်ပြောနေတဲ့ အကြောင်းအရာသည် ဘယ် Programming Paradigm ပေါ်မူတည်ပြီး ပြောနေလဲဆိုတာသိဖို့ အလွန်အရေးကြီးပါတယ်။
+
+မူရင်း Clean code စာအုပ်ရဲ့ coding အယူအဆအားလုံးနီးပါးဟာ Object Oriented Programming (OOP) ပေါ်မှာ အခြေခံထားတာပါ။ ဒါကြောင့် ဒီနေရာမှာ side effect အကြောင်းကို OOP Paradigm နဲ့ဘဲ ရှင်းလင်းသွားပါ့မယ်။
+
+Function Programming (FP) မှာလည်း pure function ဆိုတဲ့ code ရေးသားနည်းပုံစံ ရှိပါတယ်။ သူ့မှာလည်း မဖြစ်မနေလိုက်နာရမယ့် အခြေခံအချက်လေးတွေ ရှိပါတယ်။ ဥပမာ - idempotent တို့၊ no side effect တို့ပါ။ အသေးစိတ်တော့ မရေးတော့ပါဘူး။ အဓိက OOP နဲ့ မရောသွားစေဖို့ သတိချပ်စေခြင်တာပါဘဲ။
+
+
 
 **Bad:**
 
